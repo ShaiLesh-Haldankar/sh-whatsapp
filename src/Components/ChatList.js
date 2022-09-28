@@ -25,7 +25,7 @@ export default function ChatList({ chatList, selectedChat, setSelectedChat }) {
           <div
             onClick={() => setSelectedChat(item)}
             className={`chat-card ${
-              item.name === selectedChat.name ? "opened-chat" : ""
+              item.name === selectedChat?.name ? "opened-chat" : ""
             } ${item.read ? "chat-read" : "chat-unread"}`}
           >
             <div className="chat-card-profile">

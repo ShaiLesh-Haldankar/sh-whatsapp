@@ -5,7 +5,7 @@ import { useState } from "react";
 import ChatBox from "./Components/ChatBox";
 export default function App() {
   const [chatList, setChatList] = useState(data);
-  const [selectedChat, setSelectedChat] = useState(null);
+  const [selectedChat, setSelectedChat] = useState({});
   
   return (
     <div className="main-wrapper">
