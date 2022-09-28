@@ -1,0 +1,268 @@
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  .chat-list-main {
+    width: 380px;
+    height: 100%;
+    border-right: 1px solid var(--border);
+    .chat-list-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+      background-color: var(--primary);
+      padding: 0 1rem;
+      .clh-left {
+        // Profile image
+        img {
+          height: 50px;
+          width: 50px;
+          background-color: var(--border);
+          border-radius: 50%;
+        }
+      }
+      .clh-right {
+        button {
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+        }
+      }
+    }
+    .chat-list-search {
+      width: 100%;
+      height: 55px;
+      padding: 8px 1rem;
+      border-bottom: 1px solid var(--border);
+      div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding-left: 0.5rem;
+        border-radius: 4px;
+        img {
+          height: 20px;
+          width: 20px;
+        }
+        input {
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border: 0;
+          outline: none;
+        }
+      }
+    }
+    .chat-list-wrapper {
+      width: 100%;
+      height: calc(100% - 135px);
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--border);
+      }
+
+      .chat-card {
+        display: flex;
+        cursor: pointer;
+        &.opened-chat {
+          background-color: var(--border);
+        }
+        &:hover {
+          background-color: var(--border);
+        }
+        .chat-card-content {
+          width: calc(100% - 70px);
+          border-bottom: 1px solid var(--border);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          padding-right: 1rem;
+          h6,
+          p {
+            margin: 0;
+          }
+          .ccc-upper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            h6 {
+              font-size: 14px;
+              font-weight: 500;
+            }
+            span {
+              font-size: 12px;
+            }
+          }
+          .ccc-lower {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 5px;
+            p {
+              font-size: 13px;
+              color: #696969;
+              font-weight: 400;
+              white-space: nowrap;
+              min-width: calc(100% - 20px);
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+            button {
+              height: 20px;
+              width: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 4px;
+              font-size: 10px;
+              border-radius: 50%;
+              border: 0;
+              background-color: rgb(5, 204, 15);
+              color: var(--bg);
+              flex: none;
+            }
+          }
+        }
+        &.chat-read {
+        }
+        &.chat-unread {
+          .ccc-upper {
+            h6 {
+              font-weight: 700;
+            }
+          }
+          .ccc-lower {
+            p {
+              font-weight: 600;
+            }
+          }
+        }
+        .chat-card-profile {
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .chat-box-main {
+    width: calc(100% - 350px);
+    height: 100%;
+    .chat-box-header {
+      width: 100%;
+      height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--primary);
+      color: var(--bg);
+      padding: 0 1rem;
+      .cbh-left {
+        display: flex;
+        align-items: center;
+        img {
+          height: 45px;
+          width: 45px;
+          border-radius: 50%;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 0.5rem;
+          h6,
+          p {
+            margin: 0;
+          }
+          h6 {
+            font-size: 14px;
+          }
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+      .cbh-right {
+        display: flex;
+        align-items: center;
+        button {
+          padding: 0;
+          height: 22px;
+          width: 22px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
+          border: 0;
+          margin-left: 5px;
+          img {
+            height: 18px;
+            width: 18px;
+          }
+        }
+      }
+    }
+    .chat-box-body {
+      height: calc(100% - 140px);
+      background-image: url("https://c4.wallpaperflare.com/wallpaper/24/23/796/portrait-display-vertical-pattern-digital-art-wallpaper-preview.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .chat-box-footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      background-color: var(--border);
+      height: 60px;
+      padding: 0 1rem;
+      textarea {
+        width: calc(100% - 40px);
+        resize: none;
+        background-color: var(--bg);
+        border: 0;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: 0;
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary: #0e402d;
+  --border: #e5e5e5;
+  --bg: #ffffff;
+  --text: #000000;
+  --header-height: 80px;
+}
